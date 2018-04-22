@@ -1,0 +1,129 @@
+/* includes padding and border in an element's total width and height */
+html {
+  box-sizing: border-box;
+}
+
+
+/* apply these styles to all elements on the page*/
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #ffffff url('../img/blue-geo.jpg');
+  font-family: 'Abril Fatface', cursive;
+
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 1000;
+}
+
+/* Styles for the deck of cards*/
+
+/* !important rule is used for overriding the previously assigned CSS declarations */
+.deck {
+  width: 600px;
+  min-height: 600px;
+  background: linear-gradient(160deg, #e6e6ff 30%, #808080 85%);
+  padding: 32px;
+  display: flex !important;
+  flex-wrap: wrap ;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin: 0 0 10em;
+  border-radius: 20px;
+ 
+}
+
+.deck .card {
+  height: 125px;
+  width: 125px;
+  background: #2e3d49;
+  font-size: 0;
+  color: #ff6600;
+  border-radius: 80px;
+  cursor: pointer;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+}
+
+.deck .card.open {
+  transform: rotateY(0) !important;
+  background: #b3b3ff;
+  cursor: default;
+}
+
+.deck .card.show {
+  font-size: 50px;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #6666ff;
+  font-size: 50px;
+}
+
+/* score panel styling*/
+.score-panel {
+  text-align: left;
+  width: 345px;
+  margin-bottom: 10px;
+}
+
+.score-panel .stars {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  color: #ff6600;
+}
+
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+
+
+@media only screen and (max-width: 800px){
+  .deck .card{
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+  }
+
+  .deck {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .deck .card{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .deck {
+    width: 300px;
+  }
+}
