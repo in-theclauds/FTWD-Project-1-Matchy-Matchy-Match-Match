@@ -36,7 +36,7 @@ h1 {
   font-weight: 1000;
 }
 
-/* Styles for the deck of cards*/
+/* styling for deck*/
 
 /* !important rule is used for overriding the previously assigned CSS declarations */
 .deck {
@@ -94,7 +94,6 @@ h1 {
   margin: 0;
   padding: 0;
   display: inline-block;
-  margin: 0 5px 0 0;
   color: #ff6600;
 }
 
