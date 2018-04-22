@@ -19,7 +19,7 @@ moves = 0,
 wait = 420,
 totalCard = objects.length / 5,
 
-// score level system from 1 to 3 stars to shorten code
+// score level system
 stars3 = 14,
 stars2 = 16,
 star1 = 20;
@@ -61,6 +61,13 @@ function init() {
   second = 0;
   $timer.text(`${second}`)
   initTime();
+}
+
+//timer reset when the game ends or is refreashed
+function resetTimer(timer) {
+  if (timer) {
+  clearInterval(timer);
+  }
 }
 
 // rates score from 1 to 3 stars depending on the amount of moves done
@@ -146,15 +153,6 @@ if (totalCard === match) {
 }
 });
 }
-
-
-//timer reset when the game ends or is refreashed
-    function resetTimer(timer) {
-    if (timer) {
-    clearInterval(timer);
-    }
-}
-
 
 
 init();
