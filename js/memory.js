@@ -17,7 +17,7 @@ match = 0,
 second = 0,
 moves = 0,
 wait = 420,
-totalCard = objects.length / 5,
+totalCard = objects.length / 2,
 
 // score level system
 stars3 = 14,
@@ -43,6 +43,7 @@ function init() {
   
   //shuffles the objects
   let allCards = shuffle(objects);
+  console.log("shuffled: ", allCards)
   $deck.empty();
   
   // The game starts with no matching cards and zero moves 
@@ -62,6 +63,7 @@ function init() {
   $timer.text(`${second}`)
   initTime();
 }
+console.log("totalCard: ", totalCard)
 
 //timer reset when the game ends or is refreashed
 function resetTimer(timer) {
@@ -95,8 +97,9 @@ second = second + 1
 
 // boostrap modal alert window showing time, moves, score it took to finish the game, toggles when all pairs are matched.
 function gameOver(moves, score) {
+  console.log("hey")
+  $('#winnerModal').modal('toggle');
     $('#winnerText').text(`In ${second} seconds, you made a total of ${moves} moves with a score of ${score}. Good Job!`);
-    $('#winnerModal').modal('toggle');
 }
 
 
@@ -114,12 +117,15 @@ $deck.find('.card').bind('click', function () {
 
 // checks if they are matched?
 if (allOpen.length > 1) {
+  console.log("match 1: ", match)
   if (card === allOpen[0]) {
   $deck.find('.open').addClass('match');
   setTimeout(function () {
   $deck.find('open').removeClass('open show');
   }, wait);
   match++;
+  console.log("match 2: ", match)
+
 
 //the cards will flip back over if not matched.
 } else {
@@ -142,7 +148,8 @@ rating(moves);
 $moves.html(moves);
 }
 
-// game is over once all cards have been matche
+// game is over once all cards have been matched
+console.log("lalalal")
 if (totalCard === match) {
   rating(moves);
   let score = rating(moves).score;
