@@ -1,4 +1,4 @@
-// Array of all my objects
+// Array for my objects (list items)
 var objects = ['instagram', 'instagram', 'spotify', 'spotify', 'github-alt', 'github-alt', 'youtube', 'youtube', 'reddit', 'reddit', 'linkedin-square', 'linkedin-square', 'pied-piper-alt', 'pied-piper-alt', 'twitter', 'twitter'],
 
 //  shortened w/jquery for easy to read code
@@ -50,9 +50,9 @@ function init() {
   moves = 0;
   $moves.text('0');
   
-  // A for loop creates 16  <li> tags with the class of card for every <i> tag
+  // For loop creates 16  listitem tags with the class of the card for every <i> tag
   for (let i = 0; i < allCards.length; i++) {
-    $deck.append($('<li class="card"><i class="fa fa-' + allCards[i] + '"></i></li>'))
+  $deck.append($('<li class="card"><i class="fa fa-' + allCards[i] + '"></i></li>'))
   }
   addCardListener();
   
@@ -93,11 +93,11 @@ second = second + 1
 }, 1000);
 }
 
-// // boostrap modal alert window showing time, moves, score it took to finish the game, toggles when all pairs are matched.
-// function gameOver(moves, score) {
-//     $('#winnerText').text(`In ${second} seconds, you made a total of ${moves} moves with a score of ${score}. Good Job!`);
-//     $('#winnerModal').modal('toggle');
-// }
+// boostrap modal alert window showing time, moves, score it took to finish the game, toggles when all pairs are matched.
+function gameOver(moves, score) {
+    $('#winnerText').text(`In ${second} seconds, you made a total of ${moves} moves with a score of ${score}. Good Job!`);
+    $('#winnerModal').modal('toggle');
+}
 
 
 // function chexcking that is an equal match to another card that is clicked on to stay open.
@@ -139,7 +139,7 @@ moves++;
 rating(moves);
 
 // # of moves are added to the modal HTML alert
-// $moves.html(moves);
+$moves.html(moves);
 }
 
 // game is over once all cards have been matche
