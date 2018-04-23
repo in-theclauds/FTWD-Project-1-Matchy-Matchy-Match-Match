@@ -24,7 +24,7 @@ stars3 = 14,
 stars2 = 16,
 star1 = 20;
 
-// Shuffle function whnever the page is loaded
+// Shuffle function whnever the page is loaded, always random
 function shuffle(array) {
   let currentIndex = array.length, temporaryValue, randomIndex;
   
@@ -70,7 +70,7 @@ function resetTimer(timer) {
   }
 }
 
-// rates score from 1 to 3 stars depending on the amount of moves done
+// rates score from 1 to 3 stars 
 function rating(moves) {
   let rating = 3;
   if (moves > stars3 && moves < stars2) {
@@ -93,12 +93,11 @@ second = second + 1
 }, 1000);
 }
 
-// boostrap modal alert window showing time, moves, score it took to finish the game, toggles when all pairs are matched.
-function gameOver(moves, score) {
-    $('#winnerText').text(`In ${second} seconds, you made a total of ${moves} moves with a score of ${score}. Good Job!`);
-    $('#winnerModal').modal('toggle');
-}
-
+// // boostrap modal alert window showing time, moves, score it took to finish the game, toggles when all pairs are matched.
+// function gameOver(moves, score) {
+//     $('#winnerText').text(`In ${second} seconds, you made a total of ${moves} moves with a score of ${score}. Good Job!`);
+//     $('#winnerModal').modal('toggle');
+// }
 
 
 // function chexcking that is an equal match to another card that is clicked on to stay open.
@@ -140,7 +139,7 @@ moves++;
 rating(moves);
 
 // # of moves are added to the modal HTML alert
-$moves.html(moves);
+// $moves.html(moves);
 }
 
 // game is over once all cards have been matche
