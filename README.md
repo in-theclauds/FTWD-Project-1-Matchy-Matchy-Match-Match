@@ -7,7 +7,7 @@ This is a simple memory game used to test the players memory.
 <br>
 <b>Instructions</b>
 <br>
-To play, click the following link: https://in-theclauds.github.io/FTWD-Project-1-Matchy-Matchy-Match-Match/
+To play, click the following link: https://in-theclauds.github.io/Matchy-Matchy-Match-Match/
 __________________
 <li>Click on a card</li>
 <li>Keep revealing cards and working your memory to remember each unveiled card.</li>
